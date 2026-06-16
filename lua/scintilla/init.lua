@@ -140,6 +140,17 @@ function M.apply(name, p)
 	hl("WinBarNC", { fg = p.fg_muted, bg = p.bg_inactive })
 	hl("MsgArea", { fg = p.fg, bg = p.bg })
 
+	-- Message-area prompts (hit-enter "Press ENTER…", :messages, mode indicator).
+	-- zaibatsu's bright cyan/green are tuned for a dark bg and leak through
+	-- unreadably on light variants (diamond). Drive them from the palette. The
+	-- chosen keys equal zaibatsu's exact MoreMsg/Question/ModeMsg/WarningMsg
+	-- colors on amethyst, so amethyst stays byte-identical. (ErrorMsg keeps its
+	-- own solid-red backdrop and reads on any bg, so it's left to zaibatsu.)
+	hl("MoreMsg", { fg = p.variable })
+	hl("Question", { fg = p.special })
+	hl("ModeMsg", { fg = p.bg, bg = p.special })
+	hl("WarningMsg", { fg = p.keyword })
+
 	-- WhichKey-style overlays (covers folke/which-key.nvim and snacks variants).
 	hl("WhichKeyFloat", { bg = p.bg_float })
 	hl("WhichKeyBorder", { fg = p.fg_muted, bg = p.bg_float })
