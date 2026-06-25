@@ -14,8 +14,7 @@ return {
 	bg_winbar      = "#071c12",
 	bg_cursorline  = "#0a2014",
 	bg_colorcolumn = "#0d2c1a",
-	bg_visual      = "#14492e", -- mid jade selection
-	fg_visual      = "#e6f4ec", -- light mint text on the selection (readable)
+	bg_visual      = "#14492e", -- mid jade selection (bg-only; tokens read through it)
 
 	-- Text
 	fg_normal      = "#d8ecdf", -- soft mint-white

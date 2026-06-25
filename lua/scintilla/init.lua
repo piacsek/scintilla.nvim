@@ -48,11 +48,12 @@ function M.apply(name, p)
 	hl("Directory", { fg = p.variable })
 	hl("Cursor", { fg = p.bg, bg = p.cursor or p.string }) -- palettes may override the block color
 
-	-- Selection / search — zaibatsu uses reverse video (purple); set solid
-	-- palette colors so they read correctly on any background. fg_visual lets
-	-- each variant pick selected-text color: dark on a light selection
-	-- (amethyst) or light on a dark one (ruby).
-	hl("Visual", { fg = p.fg_visual, bg = p.bg_visual })
+	-- Selection / search — zaibatsu uses reverse video (purple). Visual sets
+	-- ONLY a background so each token keeps its own syntax foreground under the
+	-- selection (forcing fg flattens selected text to one color). bg_visual must
+	-- therefore contrast against every syntax color, not just one: a deep tint on
+	-- the dark variants, a pale one on the light variant.
+	hl("Visual", { bg = p.bg_visual })
 	hl("Search", { fg = p.bg, bg = p.variable })
 	hl("IncSearch", { fg = p.bg, bg = p.func })
 	hl("CurSearch", { link = "IncSearch" })

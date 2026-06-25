@@ -4,7 +4,7 @@
 --
 -- Palette key contract (every variant must define all of these):
 --   Surfaces:  bg bg_float bg_inactive bg_dim bg_active bg_winbar
---              bg_cursorline bg_colorcolumn bg_visual fg_visual
+--              bg_cursorline bg_colorcolumn bg_visual
 --   Text:      fg_normal (editor text)  fg (UI text)  fg_muted fg_dim fg_bright
 --   Syntax:    comment string variable keyword type special preproc
 --              func module key constant
@@ -22,8 +22,7 @@ return {
 	bg_winbar      = "#1f0a3a",
 	bg_cursorline  = "#362b49", -- zaibatsu CursorLine
 	bg_colorcolumn = "#510039", -- zaibatsu ColorColumn
-	bg_visual      = "#5fd7ff", -- zaibatsu Visual
-	fg_visual      = "#0e0024", -- dark text on bright cyan (zaibatsu Visual fg)
+	bg_visual      = "#45277e", -- deep violet selection (bg-only; bright tokens read through it)
 
 	-- Text
 	fg_normal      = "#ffffff", -- zaibatsu Normal fg

@@ -9,7 +9,8 @@
 -- surface* (or, in Search/Cursor, as the dark backdrop behind `bg`), so they
 -- must all be DEEP and saturated. Only the surfaces, comment, muted and dim go
 -- pale. fg_bright is the *darkest* text here (it reads on the light bg_active
--- statusline), the reverse of its role on the dark variants.
+-- statusline), the reverse of its role on the dark variants. bg_visual is a pale
+-- blue so the deep syntax tokens read *through* the selection (Visual is bg-only).
 
 return {
 	-- Surfaces (icy near-white, faint blue tint)
@@ -22,8 +23,7 @@ return {
 	bg_winbar      = "#eaeef8",
 	bg_cursorline  = "#e8edf8", -- subtle line highlight
 	bg_colorcolumn = "#e4e9f5",
-	bg_visual      = "#c2d6f5", -- light blue selection
-	fg_visual      = "#16223a", -- dark slate text on the light selection (readable)
+	bg_visual      = "#c2d6f5", -- light blue selection (bg-only; deep tokens read through it)
 
 	-- Text (dark on light)
 	fg_normal      = "#1c2333", -- main editor text

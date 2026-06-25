@@ -36,10 +36,14 @@ cornflower keys) with cyan/yellow pops.
   cool teal accent for atoms/keys (the "cyan relief" role).
 - **jade** (green bg): green/teal/cyan core with a warm gold (strings) as the pop.
 
-When the core drives a group from the palette, dark-on-light tricks only work on
-light surfaces — e.g. `fg_visual` exists so each variant sets selected-text
-color explicitly (dark on a light selection, or light on a dark one). Keep
-UI-accent colors legible as foreground on dark selected backgrounds.
+**`Visual` is background-only** — the core sets `bg = bg_visual` and no
+foreground, so each token keeps its own syntax color *through* the selection
+(forcing a single `fg` flattens selected text to one color and loses
+highlighting). The consequence: `bg_visual` must contrast against **every**
+syntax color at once, not just one. Pick a deep, low-ish-saturation tint on the
+dark variants (dark enough that bright tokens read) and a pale tint on the light
+variant (light enough that the deep tokens read). `QuickFixLine` links to
+`Visual`, so it inherits the same behavior.
 
 ### Light variants (e.g. `diamond`)
 

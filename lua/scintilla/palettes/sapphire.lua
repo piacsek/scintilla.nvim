@@ -14,8 +14,7 @@ return {
 	bg_winbar      = "#081230",
 	bg_cursorline  = "#0a1638",
 	bg_colorcolumn = "#0d1e4a",
-	bg_visual      = "#1c3a78", -- mid sapphire selection
-	fg_visual      = "#e6ecf8", -- light text on the selection (readable)
+	bg_visual      = "#1c3a78", -- mid sapphire selection (bg-only; tokens read through it)
 
 	-- Text
 	fg_normal      = "#d6e0f5", -- soft blue-white
