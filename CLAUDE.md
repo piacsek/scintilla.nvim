@@ -136,6 +136,9 @@ regenerated PNGs alongside the palette change.
 
 Consumed via `vim.pack` from `piacsek/scintilla.nvim`. The user develops in
 `~/projects/scintilla.nvim` and the installed copy lives at
-`~/.local/share/nvim/site/pack/core/opt/scintilla.nvim`. After pushing, the
-installed clone can be fast-forwarded (`git fetch && git checkout <sha>`) — note
-`vim.pack.update()` opens a confirmation buffer that must be `:w`-saved to apply.
+`~/.local/share/nvim/site/pack/core/opt/scintilla.nvim`. After pushing, refresh
+the installed copy through `vim.pack` — **never** a manual `git pull`/`checkout`
+in the installed clone (that desyncs it from the lock file, and `:checkhealth`
+then reports a version diff between the lock file and the checked-out commit).
+Run `vim.pack.update()`: it opens a confirmation buffer that must be `:w`-saved
+to apply, and it rewrites the lock file so `:checkhealth` stays clean.
